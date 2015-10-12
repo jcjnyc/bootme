@@ -1,0 +1,2 @@
+# bootme
+boot script stuff
