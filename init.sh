@@ -1,4 +1,4 @@
 git checkout master; 
 git pull;
-sh /root/install.sh 
+sh  install.sh 
 
