@@ -62,10 +62,9 @@ else
 fi
 
 ## OSSEC
-git clone https://github.com/ossec/ossec-hids/tree/v2.8.2 ossec-hids
-cp preloaded-vars.conf ossec-hids/etc/preloaded-vars.conf
-cd ossec-hids
+git clone https://github.com/ossec/ossec-hids.git /tmp/ossec-hids
+cp /tmp/bootme/preloaded-vars.conf /tmp/ossec-hids/etc/preloaded-vars.conf
+cd /tmp/ossec-hids
 git checkout v2.8.2
-./install.sh 
-echo '/var/ossec already installed'
-/var/ossec/bin/ossec-control restart
+sh install.sh 
+

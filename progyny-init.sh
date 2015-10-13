@@ -1,8 +1,9 @@
 #!/bin/bash
+yum -y update 
 yum -y install git-all
-git clone https://github.com/jcjnyc/bootme.git
-cd -v bootme 
+git clone https://github.com/jcjnyc/bootme.git /tmp/bootme
+cd /tmp/bootme
 git pull  
-sh install.sh 
+sh /tmp/bootme/install.sh 
 
 
