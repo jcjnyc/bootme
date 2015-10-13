@@ -62,11 +62,10 @@ else
 fi
 
 ## OSSEC
-if [ ! -e /var/ossec ]; then
-    git clone https://github.com/jcjnyc/ossec-agent /var/ossec
-    echo 'New ossec agent key needs to be setup on server' | mail -s "Install new ossec agent key: ${HOSTNAME}" progynydev@gmail.com
-    /var/ossec/bin/ossec-control restart
-else
-    echo '/var/ossec already installed'
-    /var/ossec/bin/ossec-control restart
-fi
+git clone https://github.com/ossec/ossec-hids/tree/v2.8.2 ossec-hids
+cp preloaded-vars.conf ossec-hids/etc/preloaded-vars.conf
+cd ossec-hids
+git checkout v2.8.2
+./install.sh 
+echo '/var/ossec already installed'
+/var/ossec/bin/ossec-control restart
