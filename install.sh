@@ -62,6 +62,12 @@ else
 fi
 
 ## OSSEC
+if [ -d /var/ossec ]; then
+    rm -rf /var/ossec
+fi
+if [ -d /tmp/ossec-hids ]; then
+    rm -rf /tmp/ossec-hids
+fi
 git clone https://github.com/ossec/ossec-hids.git /tmp/ossec-hids
 cp /tmp/bootme/preloaded-vars.conf /tmp/ossec-hids/etc/preloaded-vars.conf
 cd /tmp/ossec-hids
