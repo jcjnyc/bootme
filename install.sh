@@ -1,4 +1,4 @@
-yum -y update
+#!/bin/bash
 
 ## PACKAGE LIST
 for i in `cat yum_list.txt`; do
