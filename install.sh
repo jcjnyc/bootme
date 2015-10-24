@@ -26,28 +26,28 @@ nano
 nmap
 openssl
 perl-CPANPLUS
-php55-cli
-php55-common
-php55-mbstring
-php55-mcrypt
-php55-mysqlnd
-php55-pdo
-php55-pecl-imagick
-php55-pecl-memcache
-php55-pecl-xdebug
-php55-soap
-php55-xml
-php55-xmlrpc
-php56-devel
-php56-mbstring
-php56-mcrypt
-php56-mysqlnd
-php56-pdo
-php56-pgsql
-php56-soap
-php56-xml
-php56-xmlrpc
-vim
+php-pear.noarch
+php56.x86_64
+php56-cli.x86_64
+php56-common.x86_64
+php56-devel.x86_64
+php56-gd.x86_64
+php56-intl.x86_64
+php56-mbstring.x86_64
+php56-mcrypt.x86_64
+php56-mysqlnd.x86_64
+php56-pdo.x86_64
+php56-pecl-igbinary.x86_64
+php56-pecl-imagick.x86_64
+php56-pecl-jsonc.x86_64
+php56-pecl-jsonc-devel.x86_64
+php56-pecl-memcache.x86_64
+php56-pecl-redis.x86_64
+php56-pgsql.x86_64
+php56-process.x86_64
+php56-soap.x86_64
+php56-xml.x86_64
+php56-xmlrpc.x86_64
 yum-cron-security
 "
 
@@ -68,9 +68,7 @@ fi
 if [ -d /tmp/ossec-hids ]; then
     rm -rf /tmp/ossec-hids
 fi
-git clone https://github.com/ossec/ossec-hids.git /tmp/ossec-hids
-cp /tmp/bootme/preloaded-vars.conf /tmp/ossec-hids/etc/preloaded-vars.conf
-cd /tmp/ossec-hids
-git checkout v2.8.2
-sh install.sh 
+git clone https://github.com/ossec/ossec-hids.git /usr/local/src/ossec-hids
+git checkout v2.8.3
+
 
